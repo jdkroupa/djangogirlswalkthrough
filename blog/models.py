@@ -3,6 +3,9 @@ from django.conf import settings
 from django.utils import timezone
 
 class Post(models.Model):
+    """
+    Blog posts for a user-driven web log.
+    """
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
